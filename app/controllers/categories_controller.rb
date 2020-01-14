@@ -12,12 +12,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.create(category_params)
-    redirect_to category_path(category)
+    @category = Category.create(category_params)
+    redirect_to category_path(@category)
   end
 
   def edit
     @category = Category.find(params[:id])
+    
   end
 
   def update

@@ -1,5 +1,16 @@
 <h1><%= @post.title %></h1>
 
-<!-- Add code here to link to the post's category. -->
+
+
+    <h3>My Category: <%= link_to @post.category.name, category_path(@post.category) %></h3>       
+    <% if @post.category %>
+ 
+ 
+    <% end %>
 
 <p><%= @post.description %></p>
+
+
+
+
+

@@ -65,13 +65,7 @@ If you want to play around with the data, of course, it's always possible to tak
 When viewing a single post, we'll want to have a link to its category available.
 
 ```erb
-<!-- app/views/posts/show.html.erb -->
-
-<h1><%= @post.title %></h1>
-
-<h3>Category: <%= link_to @post.category.name, category_path(@post.category) if @post.category %></h3>
-
-<p><%= @post.description %></p>
+<%= link_to category_post.title, post_path
 ```
 
 `@post.category` is the `Category` model itself, so we can use it anywhere we would use `@category` in a view for that object. Also note that we added the `if @post.category` conditional to ensure that the view doesn't try to call `@post.category.name` if the post has not been associated with a category.
